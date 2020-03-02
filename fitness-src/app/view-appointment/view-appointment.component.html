@@ -1,0 +1,46 @@
+<p>view-appointment works!</p>
+
+<div class="row">
+    <div class="col-sm-2"></div>
+    <div class="table-responsive col-sm-10" style="padding-top: 40px;">
+        <h3 style="text-align: center;">View Appointment</h3>
+        <table class="table " border="2">
+       <tr>
+           <th>Sr.No.</th>
+           <th>First Name</th>
+           <th>Address</th>
+           <!-- <th>City</th> -->
+           <!-- <th>Package</th> -->
+           <!-- <th>TrainerPreference</th> -->
+           <th>Phone</th>
+           <th>City</th>
+           <th>Package</th>
+           <th>TrainerPreference</th>
+           
+      
+       </tr>
+   
+        <tr *ngFor="let apt of items">
+           <td>{{apt.id}}</td>
+           <td>{{apt.firstName}}</td>
+           <td>{{apt.addr}}</td>
+           <td>{{apt.phone}}</td>
+           <td>{{apt.city}</td>
+           <!-- <td>{{apt.lastName}}</td> -->
+           <td>{{apt.age}}</td>         
+        </tr>
+       
+   
+   </table>
+   <div>
+</div>
+
+    <!-- id: number;
+    firstName:string;
+    lastName: string;
+    age:number;
+    email:string;
+    phone:number;
+    addr:string;
+    city:string;
+} -->

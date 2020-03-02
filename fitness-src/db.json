@@ -1,0 +1,42 @@
+{
+  "infoModel": [
+    {
+      "firstName": "Vivek",
+      "id": 1
+    },
+    {
+      "firstName": "Voila",
+      "lastName": "Kumar",
+      "age": 23,
+      "email": "pintookumar974@gmail.com",
+      "id": 2
+    },
+    {
+      "firstName": "Gaurav",
+      "lastName": "Bhar",
+      "age": 20,
+      "email": "abhishek.khajuri123@gmail.com",
+      "phone": "8340724800",
+      "addr": "Vill - Khajuri Tiwari Tola",
+      "id": 3
+    },
+    {
+      "firstName": "Yam",
+      "lastName": "Kumar",
+      "age": 32,
+      "email": "kumarvivek2678@gmail.com",
+      "phone": "08218224050",
+      "addr": "NIMT Royal Paradise Hostel Near Pari Chowk Greater Noida",
+      "id": 4
+    },
+    {
+      "firstName": "Yam",
+      "lastName": "Chau",
+      "age": 45,
+      "email": "kumarvivek2678@gmail.com",
+      "phone": "8470906684",
+      "addr": "NAI BASTI DALLA BAJAR, NEAR SANTOSH BOOK DEPPO",
+      "id": 5
+    }
+  ]
+}

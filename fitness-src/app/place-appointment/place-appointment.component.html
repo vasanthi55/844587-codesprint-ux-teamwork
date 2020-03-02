@@ -1,0 +1,343 @@
+<br><br>
+<div class="container">
+  <div class="row">
+      <div class="col-sm-2"></div>
+    <div class="col-sm-10" style="padding-top: 20px;">
+      <div class="jumbotron">
+        <h2 class="heading" style="text-align: center;">Place Appointment Form</h2>
+        <form name="form" [formGroup]="form" (ngSubmit)="onSubmit()">
+          <div class="row">
+
+            <div class="form-group col-sm-6">
+                <label for="firstName">First Name</label>
+                <input type="text"  class="form-control" [(ngModel)]="infoModel.firstName" formControlName="firstName"  [ngClass]="{'is-invalid':form.get('firstName').touched && form.get('firstName').invalid}" required />
+                <div class="invalid-feedback">
+                  <div>First Name is required</div>
+                </div>
+              </div>
+              <div class="form-group col-sm-6">
+                <label for="lastName">Last Name</label>
+                <input type="text" class="form-control" [(ngModel)]="infoModel.lastName" formControlName="lastName" [ngClass]="{'is-invalid':form.get('lastName').touched && form.get('lastName').invalid}" required />
+                <div class="invalid-feedback">
+                  <div>Last Name is required</div>
+                </div>
+              </div>
+
+          </div>
+            <!-- <div class="form-group">
+            <label for="firstName">First Name</label>
+            <input type="text"  class="form-control" formControlName="firstName" [ngClass]="{'is-invalid':form.get('firstName').touched && form.get('firstName').invalid}" required />
+            <div class="invalid-feedback">
+              <div>First Name is required</div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="lastName">Last Name</label>
+            <input type="text" class="form-control" formControlName="lastName" [ngClass]="{'is-invalid':form.get('lastName').touched && form.get('lastName').invalid}" required />
+            <div class="invalid-feedback">
+              <div>Last Name is required</div>
+            </div>
+          </div> -->
+
+          <div class="row">
+               <!-- changes i have made from here -->
+          <div class="form-group col-sm-2">
+            <label for="age">Age</label>
+            <input type="number" class="form-control" [(ngModel)]="infoModel.age" formControlName="age" [ngClass]="{'is-invalid':form.get('age').touched && form.get('age').invalid}" required />
+            <div class="invalid-feedback">
+              <div>age is required</div>
+            </div>
+          </div>
+          <!-- end of change -->
+
+          <div class="form-group col-sm-6">
+            <label for="email">Email</label>
+            <input type="text" class="form-control" [(ngModel)]="infoModel.email" formControlName="email" [ngClass]="{'is-invalid':form.get('email').touched && form.get('email').invalid}"   />
+            <div *ngIf="form.get('email').touched && form.get('email').invalid"  class="invalid-feedback">
+              <div *ngIf="form.get('email').errors.required">Email Name is required</div>
+              <div *ngIf="form.get('email').errors.email">Email must be a valid email Address</div>
+            </div>
+          </div>
+
+           <!-- changes i have made from here -->
+          <div class="form-group col-sm-4">
+            <label for="phone">Phone</label>
+            <input type="text" class="form-control" [(ngModel)]="infoModel.phone" formControlName="phone" [ngClass]="{'is-invalid':form.get('phone').touched && form.get('phone').invalid}" required />
+            <div *ngIf="form.get('phone').touched && form.get('phone').invalid"  class="invalid-feedback">
+                <div *ngIf="form.get('phone').errors.required">Phone Number is required</div>
+                <div *ngIf="form.get('phone').errors.minlength">Phone Number must be a valid phone Number</div>
+              </div>
+          </div>
+          <!-- end of change -->
+          </div>
+         <div class="row">
+            <div class="form-group col-sm-8">
+                <label for="address">Address</label>
+                <input type="text" class="form-control" [(ngModel)]="infoModel.addr" formControlName="address" [ngClass]="{'is-invalid':form.get('address').touched && form.get('address').invalid}"   />
+                <div class="invalid-feedback">
+                    <div>address is required</div>
+                  </div>
+              </div>
+              <div class="form-group col-sm-4">
+                <label for="city">City</label>
+                <input type="text" class="form-control" [(ngModel)]="infoModel.city" formControlName="city" [ngClass]="{'is-invalid':form.get('city').touched && form.get('city').invalid}"   />
+                <div class="invalid-feedback">
+                    <div>address is required</div>
+                  </div>
+              </div>
+         </div>
+
+         <div class="row">
+            <div class="form-group col-sm-12">
+                <label for="package">Package</label>
+                <input type="text" class="form-control" [(ngModel)]="infoModel.package" formControlName="package"    />
+                <div class="invalid-feedback">
+                    <div>address is required</div>
+                  </div>
+              </div>
+         </div>
+         
+         <div class="row">
+            <div class="form-group col-sm-12">
+                <label for="trainerpref">Trainer Preference</label>
+                <input type="text" class="form-control" [(ngModel)]="infoModel.trainerpref" formControlName="trainerpref"    />
+                <div class="invalid-feedback">
+                    <div>address is required</div>
+                  </div>
+              </div>
+         </div>
+         
+         
+        <!-- Table part -->
+        <div>
+            <h5>Appointment</h5>
+        <table class="table table-striped">
+            <thead class="thead-dark">
+              <tr>
+                <th scope="col">DAY</th>
+                <th scope="col">7 To 9 AM</th>
+                <th scope="col">9 To 11 AM</th>
+                <th scope="col">11 To 1 PM</th>
+                <th scope="col">1 To 3 PM</th>
+                <th scope="col">3 To 5 PM</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">Monday</th>
+                <td>
+                    <label class="radio-inline">
+                        <input type="radio" name="optradio"> 1
+                    </label>
+                </td>
+                <td>
+                    <label class="radio-inline">
+                        <input type="radio" name="optradio"> 2
+                    </label>
+                </td>
+                <td>
+                    <label class="radio-inline">
+                        <input type="radio" name="optradio"> 3
+                    </label>
+                </td>
+                <td>
+                    <label class="radio-inline">
+                        <input type="radio" name="optradio"> 4
+                    </label>
+                </td>
+                <td>
+                    <label class="radio-inline">
+                        <input type="radio" name="optradio"> 5
+                    </label>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">Tuseday</th>
+                <td>
+                    <label class="radio-inline">
+                        <input type="radio" name="optradio"> 1
+                    </label>
+                </td>
+                <td>
+                    <label class="radio-inline">
+                        <input type="radio" name="optradio"> 2
+                    </label>
+                </td>
+                <td>
+                    <label class="radio-inline">
+                        <input type="radio" name="optradio"> 3
+                    </label>
+                </td>
+                <td>
+                    <label class="radio-inline">
+                        <input type="radio" name="optradio"> 4
+                    </label>
+                </td>
+                <td>
+                    <label class="radio-inline">
+                        <input type="radio" name="optradio"> 5
+                    </label>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">Wednesday</th>
+                <td>
+                    <label class="radio-inline">
+                        <input type="radio" name="optradio"> 1
+                    </label>
+                </td>
+                <td>
+                    <label class="radio-inline">
+                        <input type="radio" name="optradio"> 2
+                    </label>
+                </td>
+                <td>
+                    <label class="radio-inline">
+                        <input type="radio" name="optradio"> 3
+                    </label>
+                </td>
+                <td>
+                    <label class="radio-inline">
+                        <input type="radio" name="optradio"> 4
+                    </label>
+                </td>
+                <td>
+                    <label class="radio-inline">
+                        <input type="radio" name="optradio"> 5
+                    </label>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">Thursday</th>
+                <td>
+                    <label class="radio-inline">
+                        <input type="radio" name="optradio"> 1
+                    </label>
+                </td>
+                <td>
+                    <label class="radio-inline">
+                        <input type="radio" name="optradio"> 2
+                    </label>
+                </td>
+                <td>
+                    <label class="radio-inline">
+                        <input type="radio" name="optradio"> 3
+                    </label>
+                </td>
+                <td>
+                    <label class="radio-inline">
+                        <input type="radio" name="optradio"> 4
+                    </label>
+                </td>
+                <td>
+                    <label class="radio-inline">
+                        <input type="radio" name="optradio"> 5
+                    </label>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">Friday</th>
+                <td>
+                    <label class="radio-inline">
+                        <input type="radio" name="optradio"> 1
+                    </label>
+                </td>
+                <td>
+                    <label class="radio-inline">
+                        <input type="radio" name="optradio"> 2
+                    </label>
+                </td>
+                <td>
+                    <label class="radio-inline">
+                        <input type="radio" name="optradio"> 3
+                    </label>
+                </td>
+                <td>
+                    <label class="radio-inline">
+                        <input type="radio" name="optradio"> 4
+                    </label>
+                </td>
+                <td>
+                    <label class="radio-inline">
+                        <input type="radio" name="optradio"> 5
+                    </label>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">Saturday</th>
+                <td>
+                    <label class="radio-inline">
+                        <input type="radio" name="optradio"> 1
+                    </label>
+                </td>
+                <td>
+                    <label class="radio-inline">
+                        <input type="radio" name="optradio"> 2
+                    </label>
+                </td>
+                <td>
+                    <label class="radio-inline">
+                        <input type="radio" name="optradio"> 3
+                    </label>
+                </td>
+                <td>
+                    <label class="radio-inline">
+                        <input type="radio" name="optradio"> 4
+                    </label>
+                </td>
+                <td>
+                    <label class="radio-inline">
+                        <input type="radio" name="optradio"> 5
+                    </label>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">Sunday</th>
+                <td>
+                    <label class="radio-inline">
+                        <input type="radio" name="optradio"> 1
+                    </label>
+                </td>
+                <td>
+                    <label class="radio-inline">
+                        <input type="radio" name="optradio"> 2
+                    </label>
+                </td>
+                <td>
+                    <label class="radio-inline">
+                        <input type="radio" name="optradio"> 3
+                    </label>
+                </td>
+                <td>
+                    <label class="radio-inline">
+                        <input type="radio" name="optradio"> 4
+                    </label>
+                </td>
+                <td>
+                    <label class="radio-inline">
+                        <input type="radio" name="optradio"> 5
+                    </label>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <!-- end of table -->
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" class="form-control"  formControlName="password" [ngClass]="{'is-invalid':form.get('password').touched && form.get('password').invalid}" />
+            <div *ngIf="form.get('password').touched && form.get('password').invalid"  class="invalid-feedback">
+              <div *ngIf="form.get('password').errors.required">Password is required</div>
+              <div *ngIf="form.get('password').errors.minlength">Password  must be a letaset 6 charector</div>
+            </div>
+           
+          </div>
+          <div class="form-group">
+            <button class="btn btn-primary"  [disabled]="!form.valid">Register</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- <p>place-appointment works!</p> -->
